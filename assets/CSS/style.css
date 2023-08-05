@@ -1,7 +1,7 @@
 * {
     background-color: black;
     font-family:pixel;
-    color:yellow;
+    color:yellow !important;
 }
 
 @font-face {

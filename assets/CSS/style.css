@@ -1,4 +1,10 @@
 .shout-out {
     background-color:black;
     color : white;
+    font-family: uglyFont;
 }
+
+@font-face {
+    font-family: uglyFont;
+    src:url(/assets/Ugly.ttf);
+} 

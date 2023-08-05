@@ -1,11 +1,7 @@
 * {
     background-color: black;
-}
-
-.shout-out {
-    font-family: pixel;
+    font-family:pixel;
     color:yellow;
-    z-index:auto;
 }
 
 @font-face {

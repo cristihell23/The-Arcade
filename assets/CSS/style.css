@@ -1,10 +1,16 @@
+html {
+    background-image: url(/assets/images/bkg.jpg);
+    background-repeat: no-repeat center;
+    background-size: cover
+}
+
 .shout-out {
     background-color:black;
-    color : white;
-    font-family: uglyFont;
+    font-family: pixel;
+    color:yellow
 }
 
 @font-face {
-    font-family: uglyFont;
-    src:url(/assets/Ugly.ttf);
+    font-family: pixel;
+    src:url(/assets/pixel.ttf);
 } 

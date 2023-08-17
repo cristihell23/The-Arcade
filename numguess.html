@@ -18,24 +18,22 @@
         </div>
     </div>
     <div class="row g-0">
-        <div class="col-12 text-center">
-            <p>The number that I am thinking of is <span id="num">x</span></p>
-            <i class="fa-solid fa-heart-crack mb-4"></i>
-            <i class="fa-solid fa-heart textwarning"></i>
+        <div class="col-12 text-center" id="heart-wrapper">
+            <p>The correct number is: <span id="num">x</span></p>
+            <i class="fa-solid fa-heart-crack"></i>
+            <i class="fa-solid fa-heart"></i>
         </div>
     </div>
-    <form action="#">
-        <div class="row g-0">
-            <div class="col-12 text-center">
-                <input type="text" maxlength="3" size="3" minlength="1">
-            </div>
+    <div class="row g-0">
+        <div class="col-12 text-center">
+            <input type="text" maxlength="2" size="2" minlength="1" id="answer">
         </div>
-        <div class="row g-0">
-            <div class="col-12 text-center" id="test">
-                <button onclick = 'submit()'>Test</button>
-            </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-12 text-center" id="test">
+            <button onclick = 'submit()'>Test</button>
         </div>
-    </form>
+    </div>
 
     <script src="assets/Script/script.js"></script>
 </body>

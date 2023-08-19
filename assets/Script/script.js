@@ -2,6 +2,7 @@
 let totalScoreSaver = parseInt(localStorage.getItem('totalScoreSaver'));
 console.log(totalScoreSaver);
 let words = ['display','fix','great','bad','asparagus','suspicious'];
+let word = Math.floor(Math.random() * words.length);
 let totalScore = document.getElementById('score');
 let mistake = 0;
 let random = Math.floor(Math.random() * 10);
@@ -31,7 +32,17 @@ const submit = () => {
 };
 
 //Word Guess Game //
-
+const wsubmit = () => {
+    let answer = '';
+    for (letter in words[word]){
+        if (document.getElementById ('wanswer').value === letter){
+            console.log(letter);
+        }
+        else{
+            console.log(words[word])
+        }
+    }
+}
 
 //Maths Game //
 

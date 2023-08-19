@@ -1,6 +1,7 @@
 //Global Variables //
 let totalScoreSaver = parseInt(localStorage.getItem('totalScoreSaver'));
 console.log(totalScoreSaver);
+let words = ['display','fix','great','bad','asparagus','suspicious'];
 let totalScore = document.getElementById('score');
 let mistake = 0;
 let random = Math.floor(Math.random() * 10);
@@ -25,6 +26,14 @@ const submit = () => {
         mistake+=1;
         if (mistake === 3){
             window.history.back();
-        }
+        };
     };
 };
+
+//Word Guess Game //
+
+
+//Maths Game //
+
+
+//Snake Game //

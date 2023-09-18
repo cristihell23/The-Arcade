@@ -17,7 +17,26 @@ body {
     background: black;
 }
 
+.wrapper {
+    display:flex;
+    height:65vmin;
+    width:70vmin;
+    flex-direction: column;
+}
+
+/* Grid system play-area*/
 .area {
+    height: 100%;
+    width: 100;
     display:grid;
     grid-template:repeat(30, 1fr) / repeat(30, 1fr);
+    background: red;
+}
+
+.food {
+    background:green;
+}
+
+.snakeHead {
+    background:yellow;
 }

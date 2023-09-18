@@ -22,6 +22,18 @@ body {
     height:65vmin;
     width:70vmin;
     flex-direction: column;
+    border-radius:5px;
+    overflow:hidden;
+}
+
+.game{
+    color:yellow;
+    padding: 20px, 27px;
+    display:flex;
+    justify-content: center;
+    font-size:1.5rem;
+    font-weight: 400;
+
 }
 
 /* Grid system play-area*/
@@ -33,10 +45,10 @@ body {
     background: red;
 }
 
-.food {
+.area .food {
     background:green;
 }
 
-.snakeHead {
+.area .snakeHead {
     background:yellow;
 }

@@ -8,4 +8,16 @@
     margin :0;
     padding: 0;
     box-sizing:border-box;
+    font-family:pixel;
+    color:white;
+}
+
+body {
+    display:flex;
+    background: black;
+}
+
+.area {
+    display:grid;
+    grid-template:repeat(30, 1fr) / repeat(30, 1fr);
 }

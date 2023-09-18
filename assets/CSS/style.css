@@ -1,15 +1,11 @@
-* {
-    background-color: black;
-    font-family:pixel;
-    color:yellow !important;
-}
-
+/* Text Fonts */
 @font-face {
     font-family: pixel;
     src:url(/assets/pixel.ttf);
 }
 
-.btn-primary {
-    background-color: purple !important;
-    border-color:purple !important;
+* {
+    margin :0;
+    padding: 0;
+    box-sizing:border-box;
 }

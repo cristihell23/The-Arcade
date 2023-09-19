@@ -13,8 +13,8 @@ const randomFoodSpawner = () => {
 }
 
 const startGame = () => {
-    let food = `<div class ='food' style = 'grid-area: ${foodY} / ${foodX}'><div>`;
-    food += `<div class ='snakeHead' style = 'grid-area: ${snakeY} / ${snakeX}'><div>`;
+    let food = `<div class ='food' style = 'grid-area: ${foodY} / ${foodX}'> </div>`;
+    food += `<div class ='snakeHead' style = 'grid-area: ${snakeY} / ${snakeX}'> </div>`;
     area.innerHTML = food;
 };
 

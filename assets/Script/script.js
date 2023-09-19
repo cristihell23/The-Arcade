@@ -11,27 +11,22 @@ let speedX = 0, speedY = 0;
 
 //Movement Logic and direction based on key pressed
 const movement = (key) => {
-    if (key.key === 'ArrowDown') {
+    if (key.key === 'ArrowRight') {
         speedX += 1;
         speedY = 0;
     }
-    else if(key.key === 'ArrowUp') {
+    else if(key.key === 'ArrowLeft') {
         speedX -= 1;
         speedY = 0;
     }
-    else if(key.key === 'ArrowLeft') {
+    else if(key.key === 'ArrowUp') {
         speedX = 0;
         speedY -= 1;
     }
-    else if(key.key === 'ArrowLeft') {
+    else if(key.key === 'ArrowDown') {
         speedX = 0;
         speedY += 1;
     }
-    console.log(speedX);
-    console.log(speedY);
-
-    //Calling function on each keypressed to update Snake Head
-    startGame();
 };
 
 const randomFoodSpawner = () => {
@@ -48,12 +43,19 @@ const startGame = () => {
     snakeX += speedX;
     snakeY += speedY;
 
+    // Snake eats food
+    if (snakeX === foodX && snakeY === foodY){
+        randomFoodSpawner();
+    // Score implementation
+        score +=1;
+        console.log(score);
+    }
+
     food += `<div class ='snakeHead' style = 'grid-area: ${snakeY} / ${snakeX}'> </div>`;
     area.innerHTML = food;
 };
 
 randomFoodSpawner();
-startGame();
-
+setInterval(startGame,100);
 // Logging key pressed to decide which direction snake head goes towards
 document.addEventListener('keydown', movement);

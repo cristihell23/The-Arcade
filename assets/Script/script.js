@@ -43,15 +43,25 @@ const startGame = () => {
     snakeX += speedX;
     snakeY += speedY;
 
+    for (let i = 0 ; i < snakeBody.length; i++) {
+        food += `<div class ='snakeHead' style = 'grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}'> </div>`;
+    }
+
     // Snake eats food
     if (snakeX === foodX && snakeY === foodY){
         randomFoodSpawner();
+        snakeBody.push([foodX, foodY]); // adding additonal body parts based on food position
     // Score implementation
         score +=1;
         console.log(score);
+    };
+    // New body parts position update
+    for (let i = snakeBody.length - 1; i > 0; i--){
+        snakeBody[i] = snakeBody[i - 1];
     }
 
-    food += `<div class ='snakeHead' style = 'grid-area: ${snakeY} / ${snakeX}'> </div>`;
+    // Initial body position
+    snakeBody[0] = [snakeX,snakeY];
     area.innerHTML = food;
 };
 

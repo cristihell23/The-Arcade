@@ -43,6 +43,10 @@ const startGame = () => {
     snakeX += speedX;
     snakeY += speedY;
 
+    if (snakeX <= 0 || snakeX > 30 || snakeY <=0 || snakeY > 30) {
+        console.log('Game Over');
+    }
+
     for (let i = 0 ; i < snakeBody.length; i++) {
         food += `<div class ='snakeHead' style = 'grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}'> </div>`;
     }

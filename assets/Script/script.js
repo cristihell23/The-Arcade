@@ -1,6 +1,7 @@
 // HTML variables
 const area = document.querySelector('.area');
 const totalScore = document.querySelector('.score');
+const movementMouse = document.querySelectorAll('.movement i');
 
 // Starting Variables
 let gameOver = false;
@@ -30,6 +31,12 @@ const movement = (key) => {
         speedY = 1;
     }
 };
+
+// Mouse Movement Logic and direction based on clicked button
+
+movementMouse.forEach(key => {
+    key.addEventListener('click', () => console.log(key))
+})
 
 const gameOverFunction = () => {
     //Reset timer and reloads page

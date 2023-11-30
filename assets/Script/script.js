@@ -1,6 +1,6 @@
 // HTML variables
 const area = document.querySelector('.area');
-const totalScore = documnet.querySelector('.score');
+const totalScore = document.querySelector('.score');
 
 // Starting Variables
 let gameOver = false;
@@ -55,14 +55,14 @@ const startGame = () => {
 
     // Check if outside playing board
     if (snakeX <= 0 || snakeX > 30 || snakeY <=0 || snakeY > 30) {
-        gameOver = True;
+        gameOver = true;
     }
 
     for (let i = 0 ; i < snakeBody.length; i++) {
         food += `<div class ='snakeHead' style = 'grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}'> </div>`;
         // Checking wheter snake bites own body.
         if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
-            gameOver = True;
+            gameOver = true;
         };
     }
 
@@ -73,7 +73,6 @@ const startGame = () => {
     // Score implementation
         score +=1;
         totalScore.innerHTML = `Score: ${score}`;
-        console.log(score);
     };
     // New body parts position update
     for (let i = snakeBody.length - 1; i > 0; i--){

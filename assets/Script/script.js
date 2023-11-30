@@ -13,20 +13,20 @@ let snakeX = 7, snakeY =7;
 let speedX = 0, speedY = 0;
 
 //Movement Logic and direction based on key pressed
-const movement = (key) => {
-    if (key.key === 'ArrowRight' && speedX != -1) {
+const movement = (x) => {
+    if (x.key === 'ArrowRight' && speedX != -1) {
         speedX = 1;
         speedY = 0;
     }
-    else if(key.key === 'ArrowLeft' && speedX != 1) {
+    else if(x.key === 'ArrowLeft' && speedX != 1) {
         speedX = -1;
         speedY = 0;
     }
-    else if(key.key === 'ArrowUp' && speedY != 1) {
+    else if(x.key === 'ArrowUp' && speedY != 1) {
         speedX = 0;
         speedY = -1;
     }
-    else if(key.key === 'ArrowDown' && speedY != -1) {
+    else if(x.key === 'ArrowDown' && speedY != -1) {
         speedX = 0;
         speedY = 1;
     }
@@ -35,8 +35,9 @@ const movement = (key) => {
 // Mouse Movement Logic and direction based on clicked button
 
 movementMouse.forEach(key => {
-    key.addEventListener('click', () => console.log(key))
-})
+    // Passing dataset value which updates movement
+    key.addEventListener('click', () => movement ({key : key.dataset.key}));
+});
 
 const gameOverFunction = () => {
     //Reset timer and reloads page

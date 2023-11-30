@@ -29,6 +29,10 @@ const movement = (key) => {
     }
 };
 
+const gameOverFunction = () => {
+    alert ('Game Over ! Do you want to play again?');
+}
+
 const randomFoodSpawner = () => {
     // Random Coordinates to match Grid size
     foodX = Math.floor(Math.random() * 30) +1;
@@ -37,14 +41,16 @@ const randomFoodSpawner = () => {
 
 // Game start function and logic
 const startGame = () => {
+    if(gameOver) return gameOverFunction();
     let food = `<div class ='food' style = 'grid-area: ${foodY} / ${foodX}'> </div>`;
 
     // Coordinates Update
     snakeX += speedX;
     snakeY += speedY;
 
+    // Check if outside playing board
     if (snakeX <= 0 || snakeX > 30 || snakeY <=0 || snakeY > 30) {
-        console.log('Game Over');
+        gameOver = True;
     }
 
     for (let i = 0 ; i < snakeBody.length; i++) {

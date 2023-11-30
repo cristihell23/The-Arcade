@@ -5,32 +5,36 @@ const area = document.querySelector('.area');
 let gameOver = false;
 let foodX, foodY;
 let snakeBody = [];
+let setTimeInterval;
 let score = 0;
 let snakeX = 7, snakeY =7;
 let speedX = 0, speedY = 0;
 
 //Movement Logic and direction based on key pressed
 const movement = (key) => {
-    if (key.key === 'ArrowRight') {
-        speedX += 1;
+    if (key.key === 'ArrowRight' && speedX != -1) {
+        speedX = 1;
         speedY = 0;
     }
-    else if(key.key === 'ArrowLeft') {
-        speedX -= 1;
+    else if(key.key === 'ArrowLeft' && speedX != 1) {
+        speedX = -1;
         speedY = 0;
     }
-    else if(key.key === 'ArrowUp') {
+    else if(key.key === 'ArrowUp' && speedY != 1) {
         speedX = 0;
-        speedY -= 1;
+        speedY = -1;
     }
-    else if(key.key === 'ArrowDown') {
+    else if(key.key === 'ArrowDown' && speedY != -1) {
         speedX = 0;
-        speedY += 1;
+        speedY = 1;
     }
 };
 
 const gameOverFunction = () => {
-    alert ('Game Over ! Do you want to play again?');
+    //Reset timer and reloads page
+    clearInterval(setTimeInterval);
+    alert ('Game Over ! Do you want to play again? Press OK to Continue...');
+    location.reload();
 }
 
 const randomFoodSpawner = () => {
@@ -76,6 +80,6 @@ const startGame = () => {
 };
 
 randomFoodSpawner();
-setInterval(startGame,100);
+setTimeInterval = setInterval(startGame,100);
 // Logging key pressed to decide which direction snake head goes towards
 document.addEventListener('keydown', movement);
